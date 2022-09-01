@@ -1,16 +1,16 @@
 {
-  "name": "react-native-session-stats",
-  "version": "0.1.0",
-  "description": "test",
-  "main": "lib/commonjs/index",
-  "types": "lib/typescript/index.d.ts",
+  "name": "@kkurko/react-native-session-stats",
+  "version": "1.0.0",
+  "description": "Package provides context with info about your sessions",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "typescript": "tsc --noEmit"
   },
   "keywords": [
     "react-native",
-    "ios",
-    "android"
+    "session-stats",
+    "sessions"
   ],
   "repository": "https://github.com/kirillkurko/react-native-session-stats",
   "author": "Kirill Kurko <kirillkurko2609@gmail.com> (https://github.com/kirillkurko)",
