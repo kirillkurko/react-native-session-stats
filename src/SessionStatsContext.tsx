@@ -73,9 +73,13 @@ const SessionStatsProvider = ({ children, onSessionStart, onSessionEnd }: Props)
     const subscription = AppState.addEventListener(CHANGE_EVENT, handleAppStateChange);
 
     return () => {
-      subscription.remove()
+      subscription?.remove();
     }
   }, [handleAppStateChange])
+
+  useEffect(() => {
+    handleSessionStart();
+  }, [])
 
   return (
     <sessionStatsContext.Provider value={sessionStats}>
