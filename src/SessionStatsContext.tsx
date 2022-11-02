@@ -13,8 +13,8 @@ export const sessionStatsContext = createContext<SessionStats>({
 
 type Props = {
   children: ReactNode;
-  onSessionStart: (stats: SessionStats) => void;
-  onSessionEnd: (stats: SessionStats) => void;
+  onSessionStart?: (stats: SessionStats) => void;
+  onSessionEnd?: (stats: SessionStats) => void;
 }
 
 const SessionStatsProvider = ({ children, onSessionStart, onSessionEnd }: Props) => {
@@ -35,7 +35,7 @@ const SessionStatsProvider = ({ children, onSessionStart, onSessionEnd }: Props)
     const stats = persistedStats ? JSON.parse(persistedStats) : sessionStats
 
     setSessionStats(stats)
-    onSessionStart(stats);
+    onSessionStart?.(stats);
   }
 
   const handleSessionEnd = () => {
@@ -54,7 +54,7 @@ const SessionStatsProvider = ({ children, onSessionStart, onSessionEnd }: Props)
       JSON.stringify(updatedSessionStats),
     );
 
-    onSessionEnd({
+    onSessionEnd?.({
       ...updatedSessionStats,
       sessionDuration,
     });
